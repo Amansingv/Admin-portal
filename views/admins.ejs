@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="heading">Admin Portal</h1>
+
+  <div class="container">
+    <form action="/" method="POST" class="form">
+      <div class="form-field">
+        <label for="name">UserName</label>
+        <input type="text" name="name" id="name" placeholder="Enter Name">
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter Email">
+      </div>
+      <div class="row">
+        <button type="submit" class="form-button">Create User</button>
+      </div>
+    </form>
+
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <h3 class="item">User</h3>
+      <h3 class="item">Email</h3>
+      <h3>&nbsp;</h3>
+    </div>
+    <!-- <div class="row">
+      <div class="item">Aman Singh</div>
+      <div class="item">amanyup8459@gmail.com</div>
+      <a class="link" href="/delete">Delete</a>
+    </div> -->
+
+    <% users && users.map((user)=>{%>
+      <div class="row">
+        <div class="item">
+          <%= user.name %>
+        </div>
+        <div class="item">
+          <%= user.email %>
+        </div>
+
+        <div class="item">
+          <a class="link" data-method="delete" href="<%=user._id %> ">Delete</a>
+        </div>
+
+      </div>
+      <% }) %>
+
+
+
+
+
+
+  </div>
+
+</body>
+
+</html>
